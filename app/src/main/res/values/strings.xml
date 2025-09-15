@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ComposeChatApp</string>
+    <string name="title_activity_register_login">RegisterLoginActivity</string>
+    <string name="title_activity_main_activityw">MainActivityw</string>
+    <string name="title_activity_main_activityq">MainActivityq</string>
+    <string name="title_activity_register_screen">RegisterScreen</string>
+</resources>
