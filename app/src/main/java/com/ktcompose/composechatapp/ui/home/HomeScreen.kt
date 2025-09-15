@@ -23,14 +23,12 @@ import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import com.ktcompose.composechatapp.constants.Colors
 import com.ktcompose.composechatapp.constants.K
-import com.ktcompose.composechatapp.data.model.sampleChats
 import com.ktcompose.composechatapp.ui.call.CallsScreen
 import com.ktcompose.composechatapp.ui.chat.ChatListScreen
 import com.ktcompose.composechatapp.ui.chat.MessageScreen
 import com.ktcompose.composechatapp.ui.chat.MessageViewModel
 import com.ktcompose.composechatapp.ui.group.GroupsScreen
 import com.ktcompose.composechatapp.ui.user.UsersScreen
-import com.ktcompose.composechatapp.utility.CacheUtils
 
 @Composable
 fun HomeScreen(rootNav : NavHostController) {

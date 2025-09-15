@@ -6,7 +6,6 @@ object K {
 
     fun getCurrentUserId(): String? = FirebaseAuth.getInstance().currentUser?.uid
 
-    const val HOME_GRAPH = "home_graph"
     const val LOGIN_SCREEN = "login_screen"
     const val REGISTER_SCREEN = "register_screen"
     const val HOME_SCREEN = "home_screen"
@@ -19,10 +18,6 @@ object K {
 
     const val ONLINE = "Online"
     const val OFFLINE = "Offline"
-    const val CHAT_ID = "chatId"
-
-//    const val OFFLINE = "Offline"
-//    const val OFFLINE = "Offline"
 
 
 }

@@ -15,9 +15,7 @@ import com.ktcompose.composechatapp.data.model.UserRecordModel
 import com.ktcompose.composechatapp.data.room.dao.MessageDao
 import com.ktcompose.composechatapp.data.room.dao.UserRecordDao
 import com.ktcompose.composechatapp.data.room.entity.MessageEntity
-import com.ktcompose.composechatapp.data.room.entity.UserRecordEntity
 import com.ktcompose.composechatapp.extensions.isNullExt
-import com.ktcompose.composechatapp.utility.CacheUtils
 import com.ktcompose.composechatapp.utility.GenerateUtils
 import com.ktcompose.composechatapp.utility.Mappers.toEntity
 import com.ktcompose.composechatapp.utility.Mappers.toModel
@@ -26,10 +24,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
-import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.channelFlow
-import kotlinx.coroutines.flow.emitAll
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import java.util.UUID
@@ -177,34 +172,6 @@ class AppRepository @Inject constructor(
         ref.addValueEventListener(listener)
         awaitClose { ref.removeEventListener(listener) }
     }
-
-
-
-//    fun observeUserRecords(): Flow<List<UserRecordModel>> = callbackFlow {
-//        val ref = realtimeDb.getReference(K.USERS_RECORD)
-//
-//        val listener = object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                val currentUid = K.getCurrentUserId() // get my uid
-//                val users = snapshot.children
-//                    .mapNotNull { it.getValue(UserRecordModel::class.java) }
-//                    .filter { it.uid != currentUid } // exclude myself
-//
-//                CacheUtils.saveUsersRecord(users)   // save to in-memory cache
-//
-//                trySend(users.sortedByDescending { it.timestamp }) // emit the updated list
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                close(error.toException())
-//            }
-//        }
-//
-//
-//        ref.addValueEventListener(listener)
-//
-//        awaitClose { ref.removeEventListener(listener) }
-//    }
 
 
     // MESSAGES --------------------------------------------------

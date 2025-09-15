@@ -3,7 +3,6 @@ package com.ktcompose.composechatapp.ui.auth
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
-import com.ktcompose.composechatapp.utility.CacheUtils
 import com.ktcompose.composechatapp.data.model.AuthUiState
 import com.ktcompose.composechatapp.data.repository.AppRepository
 import com.ktcompose.composechatapp.data.model.RegisterModel
@@ -108,6 +107,5 @@ class AuthViewModel @Inject constructor(
     fun logout() {
         FirebaseAuth.getInstance().signOut()
         localStorageRepo.clearMyUser()
-        CacheUtils.clearAll()
     }
 }
